@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 const superagent = require('superagent');
 const cheerio = require('cheerio');
-const fs = require('fs');
 const reptileUrl = "http://www.jianshu.com/";
 function replaceText(text) {
   return text.replace(/\n/g, "").replace(/\s/g, "");
