@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<ul id="box"></ul>
+<script>
+
+    $.post('/get_json',function(res){
+        var html = '';
+        var data = res.data;
+        for(var i=0;i<data.length;i++){
+            var e = data[i];
+            html += '<li>';
+            html += '<div>'+e.abstract+'</div>';
+            html += '<div>'+e.collection_tag+'</div>';
+            html += '<div>'+e.title+'</div>';
+            html += '<div><img src="'+e.author.avatar+'" alt=""></div>';
+            html += '<div><img src="'+e.thumbnails+'" alt=""></div>';
+            html += '</li>';
+        }
+        $('#box').html(html);
+    });
+
+</script>
